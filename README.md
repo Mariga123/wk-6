@@ -1,45 +1,38 @@
-# 📝 **Assignment: Joins and Relationships**
+# SQL Joins Assignment
 
-## 🎯 **Learning Objectives**
-* ➕ Understand and implement **INNER JOIN**, **LEFT JOIN**, and **RIGHT JOIN** in SQL.
-* 👨‍💻 Retrieve data from multiple related tables using SQL queries.
-* 🔗 Explore relationships between different tables (e.g., employees, products, orders).
-* 💻 Practice real-world SQL scenarios that involve combining tables and retrieving relevant data.
+## 📘 Overview
+This assignment helps you practice SQL JOINs using a sample database.  
+You will learn to use **INNER JOIN, LEFT JOIN, and RIGHT JOIN** with real-world style tables.
 
----
+## 📂 Files in this Package
+- `answers.sql` → Contains SQL queries for the assignment questions.
+- `sample_data.sql` → Creates tables and inserts sample data (with NULL cases to demonstrate join behavior).
 
-## 📋 **What You'll Need**
-* 💻 A computer with internet access.
-* ✍️ A code editor (e.g., Visual Studio Code).
-* 🖥️ MySQL Workbench or another SQL database environment.
+## 🛠️ Setup Instructions
+1. Open **MySQL Workbench** (or your SQL environment).
+2. Run the contents of `sample_data.sql` to create and populate the tables.
+3. Run queries from `answers.sql` to test the assignment.
 
----
+## 🧑‍💼 Assignment Questions
+### Question 1 – INNER JOIN
+Get firstName, lastName, email, and officeCode of all employees with their offices.
 
-## 📝 **Submission Instructions**  
-📂 Write all your SQL queries in the **answers.sql** file.  
-✍️ Answer each question concisely and make sure your queries are clear and correct.  
-🗣️ Structure your responses clearly, and use comments if necessary to explain your approach.
+### Question 2 – LEFT JOIN
+Get productName, productVendor, and productLine from products (including products with no matching productLine).
 
----
+### Question 3 – RIGHT JOIN
+Retrieve orderDate, shippedDate, status, and customerNumber for the first 10 orders (including orders without a matching customer).
 
-## 📚 **Assignment Questions**
+## 🔎 Expected Results
+- **INNER JOIN** → Only matching employees and offices.
+- **LEFT JOIN** → Includes products even if productLine is missing (will show NULL).
+- **RIGHT JOIN** → Includes orders even if the customer does not exist (will show NULL).
 
-### **Question 1 🧑‍💼**  
-**Write an SQL query** to get the **firstName**, **lastName**, **email**, and **officeCode** of all employees.  
-Use an **INNER JOIN** to combine the **employees** table with the **offices** table using the **officeCode** column.
+## ✅ Example Usage
+```sql
+-- Load sample data
+SOURCE sample_data.sql;
 
----
-
-### **Question 2 🛍️**  
-**Write an SQL query** to get the **productName**, **productVendor**, and **productLine** from the **products** table.  
-Use a **LEFT JOIN** to combine the **products** table with the **productlines** table using the **productLine** column.
-
----
-
-### **Question 3 📦**  
-**Write an SQL query** to retrieve the **orderDate**, **shippedDate**, **status**, and **customerNumber** for the first 10 orders.  
-Use a **RIGHT JOIN** to combine the **customers** table with the **orders** table using the **customerNumber** column.
-
----
-
-Good luck 🚀
+-- Run solutions
+SOURCE answers.sql;
+```
